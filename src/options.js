@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {stateCodes, healthCodes, productCodes, genderCodes} from './refdata'
+import {stateCodes, healthCodes, productCodes, genderCodes, flightCodes} from './refdata'
 import {formatDollars} from './utils'
 
 let refDataOptions = (refData, optionProp) =>
@@ -16,6 +16,10 @@ export function dollarOptions(start, endInclusive, step) {
 
 export function genderOptions() {
   return refDataOptions(genderCodes, 'title')
+}
+
+export function flightOptions() {
+  return refDataOptions(flightCodes, 'title')
 }
 
 export function healthOptions() {

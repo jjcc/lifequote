@@ -19,7 +19,7 @@ import {GlobalModal, Step} from './enums'
 let STEPS = [
   {code: Step.GENERAL_INFO, name: 'General Information'},
   {code: Step.QUOTE_INFO, name: 'Get your quote'},
-  {code: Step.SEND_QUOTE, name: 'Send your quote to an agent'}
+  {code: Step.SEND_QUOTE, name: 'Send transaction to blockchain'}
 ]
 
 let StepLabel = ({active, name, step}) =>
@@ -64,7 +64,7 @@ let LifeQuote = React.createClass({
     let {loading, step} = state
     return <div className={classnames({loading})}>
       <Row>
-        <Col sm={9}>
+        <Col sm={10}>
           <div className="quote-progress clearfix">
             {STEPS.map(({name, code}) =>
               <StepLabel active={step === code} key={code} name={name} step={code}/>
@@ -74,16 +74,12 @@ let LifeQuote = React.createClass({
             {this.renderContent()}
           </div>
         </Col>
-        <Col sm={3}>
-          <h3 className="text-center">Need Assistance?</h3>
+        <Col sm={2}>
+          <h3 className="text-center">Need help?</h3>
           <div className="list-group">
             {MODALS.map(modal => <ModalItem {...modal} onClick={actions.showModal}/>)}
           </div>
-          <p className="text-center">
-            <a href={LOCAL_SALES_AGENT_URL} target="_blank">
-              Find a Local Sales Agent <Glyphicon glyph="share"/>
-            </a>
-          </p>
+
         </Col>
       </Row>
       {this.renderModal()}

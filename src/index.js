@@ -10,7 +10,7 @@ import {render} from 'react-dom'
 
 import App from './App'
 
-let zipCodeMatch = /zipCode=(\d{5})/.exec(window.location.href)
+let zipCodeMatch = /zipCode=([A-Z]\d[A-Z]\d[A-Z]\d)/.exec(window.location.href)
 let zipCode = (zipCodeMatch != null ? zipCodeMatch[1] : '')
 
 render(<App zipCode={zipCode}/>, document.querySelector('#app'))

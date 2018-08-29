@@ -41,12 +41,12 @@ let QuoteInfo = React.createClass({
                   <td>{generalInfo.age}</td>
                 </tr>
                 <tr>
-                  <th>State</th>
+                  <th>Province/State</th>
                   <td>{States[generalInfo.stateCode].abbreviation}</td>
                 </tr>
                 <tr>
-                  <th>Tobacco Use</th>
-                  <td>{generalInfo.tobacco ? 'Smoker' : 'Non Smoker'}</td>
+                  <th>Flight class</th>
+                  <td>{generalInfo.tobacco ? 'Economic' : 'Business'}</td>
                 </tr>
                 <tr>
                   <th>Amount of coverage</th>

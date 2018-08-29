@@ -12,7 +12,7 @@ import PolicyAdvisorModal from '../modals/PolicyAdvisorModal'
 
 import {PRIVACY_POLICY_URL} from '../constants'
 import {Gender, GeneralInfoModal, HealthCode, ProductCode, State} from '../enums'
-import {dollarOptions, genderOptions, healthOptions, integerOptions, productOptions, stateOptions} from '../options'
+import {dollarOptions, genderOptions, healthOptions, integerOptions, productOptions, stateOptions, flightOptions} from '../options'
 import {debounce, isZip} from '../utils'
 
 let FORM_DEFAULTS = {
@@ -142,7 +142,7 @@ let GeneralInfo = React.createClass({
               value={form.zipCode}
             />
           </FormField>
-          <FormField label="Do you use tobacco products?">
+          <FormField label="Is the flight economic class?">
             <label className="radio-inline">
               <input type="radio" name="tobacco" value="Yes"checked={form.tobacco === 'Yes'}/> Yes
             </label>
@@ -150,12 +150,12 @@ let GeneralInfo = React.createClass({
               <input type="radio" name="tobacco" value="No" checked={form.tobacco === 'No'}/> No
             </label>
           </FormField>
-          <FormField id="coverage" label="Coverage"
+          <FormField id="coverage" label="Flight"
             modal={<Button bsStyle="link" onClick={(e) => this.showModal(GeneralInfoModal.NEEDS_CALCULATOR, e)}>
-              How much do you need?
+              Flight of your interest?
             </Button>}>
             <select className="form-control" name="coverage" id="coverage" value={form.coverage}>
-              {[...dollarOptions(100000, 950000, 50000), ...dollarOptions(1000000, 3000000, 500000)]}
+              {flightOptions()}
             </select>
           </FormField>
           <FormField id="productCode" label="Type of coverage"
@@ -166,9 +166,9 @@ let GeneralInfo = React.createClass({
               {productOptions()}
             </select>
           </FormField>
-          <FormField id="healthCode" label="Health category"
+          <FormField id="healthCode" label="Premium category"
             modal={<Button bsStyle="link" onClick={(e) => this.showModal(GeneralInfoModal.HEALTH_CODE, e)}>
-              What’s your category?
+              What’s your prefered premium?
             </Button>}>
             <select className="form-control" name="healthCode" id="healthCode" value={form.healthCode}>
               {healthOptions()}
