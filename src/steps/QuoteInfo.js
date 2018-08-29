@@ -5,8 +5,9 @@ import Row from 'react-bootstrap/lib/Row'
 import Table from 'react-bootstrap/lib/Table'
 
 import {Step} from '../enums'
-import {Genders, HealthCodes, ProductCodes, States} from '../lookups'
+import {Genders, HealthCodes, ProductCodes, States,Flights} from '../lookups'
 import {formatDollars} from '../utils'
+import { flightCodes } from '../refdata';
 
 let getPaymentRows = payments =>
   payments.reduce((rows, {term, annualPayment, monthlyPayment}) => {
@@ -49,34 +50,32 @@ let QuoteInfo = React.createClass({
                   <td>{generalInfo.tobacco ? 'Economic' : 'Business'}</td>
                 </tr>
                 <tr>
-                  <th>Amount of coverage</th>
-                  <td>{formatDollars(generalInfo.coverage)}</td>
+                  <th>Flight</th>
+                  <td>{Flights[generalInfo.coverage].title}</td>
                 </tr>
                 <tr>
                   <th>Type of coverage</th>
                   <td>{ProductCodes[generalInfo.productCode].name}</td>
                 </tr>
                 <tr>
-                  <th>Underwriting class</th>
+                  <th>Premium class</th>
                   <td>{HealthCodes[generalInfo.healthCode].title}</td>
                 </tr>
               </tbody>
             </Table>
           </Col>
           <Col sm={6}>
-            <h3>Term</h3>
+            <h3>Cost/Payment</h3>
             <Table bordered>
-              <thead>
-                <tr>
-                  {rows.header}
-                </tr>
-              </thead>
               <tbody>
                 <tr>
-                  {rows.annual}
+                 <td>Pool size: 3,400,567 CND </td>
                 </tr>
                 <tr>
-                  {rows.monthly}
+                  <td>Cost: 25</td>
+                </tr>
+                <tr>
+                  <td>Payment on delay: 3000</td>
                 </tr>
               </tbody>
             </Table>
@@ -90,7 +89,7 @@ let QuoteInfo = React.createClass({
               Edit
             </Button>
             <Button bsStyle="primary" className="pull-right" onClick={() => changeStep(Step.SEND_QUOTE)}>
-              Forward to Agent
+              Pay and send tranction to blockchain
             </Button>
           </Col>
         </Row>

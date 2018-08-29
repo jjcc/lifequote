@@ -1,4 +1,4 @@
-import {stateCodes, healthCodes, productCodes, genderCodes} from './refdata'
+import {stateCodes, healthCodes, productCodes, genderCodes,flightCodes} from './refdata'
 
 let nameToConst = (name) => name.replace(/\s/g, '_').toUpperCase()
 
@@ -35,6 +35,8 @@ export const GlobalModal = {
 }
 
 export const HealthCode = makeEnum(healthCodes, 'title')
+
+export const FlightCode = makeEnum(flightCodes, 'title')
 
 export const ProductCode = makeEnum(productCodes, 'name')
 

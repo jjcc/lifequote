@@ -1,4 +1,4 @@
-import {stateCodes, healthCodes, productCodes, genderCodes} from './refdata'
+import {stateCodes, healthCodes, productCodes, genderCodes,flightCodes} from './refdata'
 
 /**
  * Creates a lookup from codes to refdata objects.
@@ -16,3 +16,5 @@ export const HealthCodes = makeLookup(healthCodes)
 export const ProductCodes = makeLookup(productCodes)
 
 export const States = makeLookup(stateCodes)
+
+export const Flights = makeLookup(flightCodes)

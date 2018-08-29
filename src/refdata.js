@@ -28,11 +28,11 @@ export const genderCodes = [
 ]
 
 export const flightCodes = [
-  {code: '1', title: 'AC088'},
-  {code: '2', title: 'AC830'},
-  {code: '3', title: 'UA835'},
-  {code: '4', title: 'WJ332'},
-  {code: '5', title: 'AC38'},
-  {code: '6', title: 'AC2232'},
-  {code: '7', title: 'UA434'},
+  {code: 1, title: 'AC088'},
+  {code: 2, title: 'AC830'},
+  {code: 3, title: 'UA835'},
+  {code: 4, title: 'WJ332'},
+  {code: 5, title: 'AC38'},
+  {code: 6, title: 'AC2232'},
+  {code: 7, title: 'UA434'}
 ]

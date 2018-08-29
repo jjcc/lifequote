@@ -11,13 +11,13 @@ import PermanentInsuranceModal from '../modals/PermanentInsuranceModal'
 import PolicyAdvisorModal from '../modals/PolicyAdvisorModal'
 
 import {PRIVACY_POLICY_URL} from '../constants'
-import {Gender, GeneralInfoModal, HealthCode, ProductCode, State} from '../enums'
+import {Gender, GeneralInfoModal, HealthCode, ProductCode, State, FlightCode} from '../enums'
 import {dollarOptions, genderOptions, healthOptions, integerOptions, productOptions, stateOptions, flightOptions} from '../options'
 import {debounce, isZip} from '../utils'
 
 let FORM_DEFAULTS = {
   age: 35,
-  coverage: 250000,
+  coverage: FlightCode.AC088,
   gender: Gender.MALE,
   healthCode: HealthCode.EXCELLENT,
   productCode: ProductCode.TERM,
